@@ -1,0 +1,215 @@
+/* Import Google font - Poppins */
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root{
+  --bg-color: #f1f5f8;
+  --bg-color-2: #fff;
+  --font-color: #324d67;
+  --icon-hover: #324d67;
+  --header-title-hover: #f2f2f2;
+  --days-hover: #f2f2f2;
+}
+.dark-mode{
+  --bg-color: #0d2735; /*#0b212d*/
+  --bg-color-2: #324d67;
+  --font-color: #fff; 
+  --icon-hover: #fff; 
+  --header-title-hover: rgba(0,0,0,0.4);
+  --days-hover: #0275d8;      
+}
+body{
+  font-family: 'Poppins', sans-serif;
+  background: var(--bg-color);
+  transition: all 0.4s linear;
+}
+ul{
+  list-style: none;
+}
+
+.title{
+  text-align: center;
+  text-transform: capitalize;
+  color: var(--font-color);
+  letter-spacing: 0.1rem;
+  margin: 3rem auto 0 auto;
+  max-width: 600px;
+  position: relative;
+}
+.toggle-container{
+  position: absolute;
+  top: 0.5rem;
+  right: 1rem;
+ 
+}
+.color-mode-toggle{
+  position: relative;
+  width: 2.5rem;
+  height: 1.3rem;
+  color: white;
+  background-color: #5a5a5a; 
+  border-radius: 15px;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  display: inline-flex;
+  border: 1px solid #808080;
+  cursor: pointer;
+}
+
+.color-mode-toggle .toggle-btn{
+  position: absolute;
+  display: block;
+  background-color: #c0c0c0;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: all 0.4s linear;
+}
+.color-mode-toggle.slide .toggle-btn{
+  left: 50%;
+}
+.wrapper{
+  width: 95vw;
+  max-width: 600px;
+  background: var(--bg-color-2);
+  border-radius: 10px;
+  margin: 1rem auto;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s linear;
+}
+.wrapper header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid #ddd;
+  padding: 1rem;
+  font-size: 1.3rem;
+}
+.wrapper header p{
+  color: var(--font-color);
+}
+.wrapper header p:hover{
+  background-color: var(--header-title-hover);
+  padding: 0 1rem;
+}
+.wrapper header .icons{
+  cursor: pointer;
+  color: #ccc;
+  transition: all 0.3s linear;
+}
+.wrapper header .icons:hover{
+  color: var(--icon-hover);
+}
+.wrapper header .current-date{
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+}
+
+.calendar{
+  padding: 20px;
+}
+.calendar ul{
+  display: flex;
+  flex-wrap: wrap;
+  text-align: center;
+}
+.calendar .days{
+  margin-bottom: 20px;
+}
+.calendar li{
+  color: var(--font-color);
+  width: calc(100% / 7);
+  font-size: 1.07rem;
+}
+.calendar .weeks li{
+  font-weight: 700;
+  cursor: default;
+}
+.calendar .days li{
+  z-index: 1;
+  cursor: pointer;
+  position: relative;
+  margin-top: 30px;
+}
+.days li.inactive{
+  color: #aaa;
+}
+.days li.active{
+  color: #fff;
+}
+.days li::before{
+  position: absolute;
+  content: "";
+  left: 50%;
+  top: 50%;
+  height: 40px;
+  width: 40px;
+  z-index: -1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+}
+.days li.active::before{
+  background: #9B59B6;
+}
+.days li:not(.active):hover::before{
+  background: var(--days-hover);
+}
+.select-date{
+  position: absolute;
+  background-color: rgba(0,0,0,0.4);
+  border-radius: 10px;
+  width: 100%;
+  height: 100%;
+  top: -200%;
+  right: 0;
+  left: 0;
+  color: #fff;
+  padding: 5rem 3rem;
+  z-index: 2;
+  transition: all 0.3s ease;
+  overflow: auto;
+}
+.select-date.show{
+  top: 0;
+}
+.select-date .header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 700;
+  font-size: 1.3rem;
+  position: relative;
+}
+.select-date .header span{
+  cursor: pointer;
+}
+.select-date .header .close-select-date{
+  position: absolute;
+  top: -3rem;
+  right: 0.3rem;
+  cursor: pointer;
+}
+.select-date .months{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.select-date .months li button{
+  cursor: pointer;
+  border: 1px solid #dc3545;
+  color: #fff;
+  background-color: #dc3545;
+  padding: 0.3rem 1rem;
+  border-radius: 10px;
+  letter-spacing: 0.1rem;
+}
+

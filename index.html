@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Calendar</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css" integrity="sha512-c93ifPoTvMdEJH/rKIcBx//AL1znq9+4/RmMGafI/vnTFe/dKwnn1uoeszE2zJBQTS1Ck5CqSBE+34ng2PthJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" type="text/css" href="./styles.css">
+	</head>
+	<body>
+		<header class="title">
+			<h2>calendar</h2>
+			<div class="toggle-container">
+				<div class="color-mode-toggle">
+					<span></span>
+					<span></span>
+					<span class="toggle-btn"></span>
+				</div>
+			</div>
+		</header>
+		<div class="wrapper">
+		    <header>
+		        <span class="icons" id="prev">
+		          	<i class="fas fa-arrow-circle-left"></i>
+		        </span>
+		        <p class="current-date" title="Select date"></p>
+		        <span class="icons" id="next">
+		          	<i class="fas fa-arrow-circle-right"></i>
+		        </span>
+		    </header>
+	      	<div class="calendar">
+		        <ul class="weeks">
+			        <li>Su</li>
+			        <li>Mo</li>
+			        <li>Tu</li>
+			        <li>We</li>
+			        <li>Th</li>
+			        <li>Fr</li>
+			        <li>Sa</li>
+		        </ul>
+	        	<ul class="days"></ul>
+	      	</div>
+	      	<!-- month and year modal-->
+	      	<div class="select-date">
+		      	<div class="header">
+		      		<span class="change-year" data-id="pre">
+		      			<i class="fas fa-arrow-circle-left"></i>
+		      		</span>
+		      		<p class="year"></p>
+		      		<span class="change-year" data-id="nxt">
+		      			<i class="fas fa-arrow-circle-right"></i>
+		      		</span>
+		      		<div class="close-select-date">
+		      			<i class="fas fa-times"></i>
+		      		</div>
+		      	</div>
+		      	<ul class="months">
+		      		<!--months go here-->
+		      	</ul>
+	      	</div>
+	    </div>
+	   
+		<script src="./main.js"></script>
+	</body>
+</html>

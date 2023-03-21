@@ -82,7 +82,7 @@ currentDate.onclick = () => {
     
 }
 closeSelectDate.addEventListener('click', () => {
-    selectDate.classList.remove("show");
+    closeModal();
 })
 //select any year of choice from the modal
 changeYear.forEach(btn => {
@@ -110,9 +110,15 @@ selectMonth.onclick = (e) => {
     currMonth = Number(newMonth);
     currYear = newYear;
     renderCalendar();
+    closeModal();
 }
 //change color mode
 colorToggle.onclick = function() {
     this.classList.toggle('slide');
     document.body.classList.toggle('dark-mode');
+}
+
+//close year and month modal
+function closeModal(){
+    selectDate.classList.remove("show");
 }

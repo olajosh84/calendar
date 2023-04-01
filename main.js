@@ -46,7 +46,7 @@ const renderCalendar = () => {
     let allDays = document.querySelectorAll(".days li");
     allDays.forEach(day => {
         currentDay = day.textContent;
-        if(Number(currentDay) === Number(date.getDate()) && Number(currMonth) === Number(new Date().getMonth()) && Number(currYear) === Number(new Date().getFullYear())){
+        if(Number(currentDay) === Number(date.getDate()) && !day.classList.contains('inactive') && Number(currMonth) === Number(new Date().getMonth()) && Number(currYear) === Number(new Date().getFullYear())){
             day.classList.add('active');
         }else{
             day.classList.remove('active');
